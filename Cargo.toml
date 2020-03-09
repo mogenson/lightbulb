@@ -1,0 +1,12 @@
+[package]
+name = "lightbulb"
+version = "0.1.0"
+authors = ["Michael Mogenson <michael.mogenson@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+gdk = "0.12"
+gio = "0.8"
+gtk = { version = "0.8", features = ["v3_20"] }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
