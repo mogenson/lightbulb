@@ -52,10 +52,12 @@ fn build_ui(application: &gtk::Application) {
             },
         };
 
-        let json_str = serde_json::to_string(&message).expect("can't convert to json");
+        println!(
+            "{}",
+            serde_json::to_string(&message).unwrap_or(String::new())
+        );
         let json_vec = serde_json::to_vec(&message).expect("can't convert to json");
 
-        println!("sending: {} to {}:38899", json_str, text);
         socket
             .send_to(&json_vec, format!("{}:38899", text))
             .expect("can't send udp");
